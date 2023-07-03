@@ -26,6 +26,7 @@ make_temp(char *template)
 		err_sys("can't create temp file");
 	printf("temp name = %s\n", template);
 	close(fd);
+	
 	if (stat(template, &sbuf) < 0) {
 		if (errno == ENOENT)
 			printf("file doesn't exist\n");
