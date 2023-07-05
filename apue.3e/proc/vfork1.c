@@ -15,6 +15,8 @@ main(void)
 	} else if (pid == 0) {		/* child */
 		globvar++;				/* modify parent's variables */
 		var++;
+		printf("pid = %ld, glob = %d, var = %d\n", (long)getpid(), globvar,
+	  var);
 		_exit(0);				/* child terminates */
 	}
 
